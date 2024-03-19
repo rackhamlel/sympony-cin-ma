@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue sur SymfonyCine!{% endblock %}
+
+{% block body %}
+
+
+
+<form action="{{path('app_home')}}" method="post" >
+<input type="text" id="button_rechercher" name="term" />
+<button name="button2">Rechercher</button>
+<button name="button">Aléatoire</button>
+</form>
+<ul>
+    {% for movie in movieList %}
+        <a href="{{ path('fiche', {'id': movie.id}) }}">
+                <img src="https://www.themoviedb.org/t/p/w220_and_h330_face{{ movie.poster_path }}">
+            </a>
+    {% endfor %}
+</ul>
+
+
+
+{% endblock %}

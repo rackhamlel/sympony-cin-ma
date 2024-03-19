@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails du film - {{ movieDetails.title }}{% endblock %}
+
+{% block body %}
+    <h1>{{ movieDetails.title }}</h1>
+
+    <div>
+        <img src="https://www.themoviedb.org/t/p/w220_and_h330_face{{ movieDetails.poster_path }}">
+    </div>
+
+    <div>
+        <p><strong>Date de sortie :</strong> {{ movieDetails.release_date }}</p>
+        <p><strong>Langue originale :</strong> {{ movieDetails.original_language }}</p>
+        <p><strong>Vote moyen :</strong> {{ movieDetails.vote_average }}/10 ({{ movieDetails.vote_count }} votes)</p>
+        <p><strong>Description :</strong> {{ movieDetails.overview }}</p>
+    </div>
+    
+
+    
+    {{ dump(ratingForm) }}
+    
+{% endblock %}
